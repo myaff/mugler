@@ -1,0 +1,75 @@
+$test-dot-default = $color;
+$test-dot-active = $green;
+.test {
+  display: none;
+  &__number {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+  }
+  
+  &__title {
+    font-weight: 800;
+  }
+  
+  &__carousel {
+    .owl-stage-outer {
+      overflow: visible;
+    }
+  }
+}
+
+.test-variant {
+  min-height: 200px;
+  padding: $spacers.twenty.y $spacers.ten.x;
+  cursor: pointer;
+  
+  &::before {
+    content: '';
+    display: block;
+    size(410px, 403px);
+    absolute(50%, 50%);
+    transform: translate(-50%, -50%);
+    background: url(/build/img/light-small.png) center no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  &.is-active::before {
+    opacity: 1;
+  }
+  
+  &__ctrl {
+    circle(20px);
+    margin: 0 auto;
+    background: $test-dot-default;
+    transition: background 0.2s;
+    
+    ^[0].is-active & {
+      background: $test-dot-active;
+    }
+  }
+}
+
+.test-results {
+  display: none;
+  &__img {
+    margin: -80px auto -90px;
+  }
+  &__restart {
+    margin-top: 310px;
+    .btn {
+      padding: 14px 25px;
+    }
+  }
+}
+
+.test-result {
+  display: none;
+  
+  &.is-active {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+/*mixin font_paths($font){
+  src: url($font+'.eot');
+  src: url($font+'.eot#iefix') format("embedded-opentype"),
+       url('#{$fonts-path}'+$font+'.woff') format("woff"),
+       url('#{$fonts-path}'+$font+'.ttf') format("truetype"),
+       url('#{$fonts-path}'+$font+'.otf') format("opentype"),
+       url('#{$fonts-path}'+$font+'.svg') format("svg");
+}
+mixin font_paths($font){
+  src: url($fonts-path + $font + '.otf') format("opentype");
+}*/
+
+if $use-fonts {
+  for key, $font in $fonts-arr {
+    @font-face {
+      font-family: unquote($font.name);
+      src: url($fonts-path + $font.file + '.ttf') format("truetype");
+      font-weight: $font.weight;
+      font-style: $font.style;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.field {
+  &__label {
+    display: block;
+  }
+  &__input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 13px;
+    
+    
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid currentColor;
+    
+    {hover-focus-active} {
+      outline: 0;
+    }
+    
+    @media $display-breakpoints.lg-and-up {
+      padding-bottom: 15px;
+    }
+  }
+  &__placeholder {
+    absolute(0px, 0px);
+    cursor: text;
+  }
+}
+
+.form {
+  &--inline {
+    @media $display-breakpoints.sm-and-up {
+      flexy(flex-start, flex-end);
+    }
+  }
+  &--inline &__btn {
+    flex: 0 0 auto;
+  }
+  &--inline &__field {
+    flex: 1 1 auto;
+    margin-bottom: $spacers.twenty.y;
+    @media $display-breakpoints.sm-and-up {
+      margin-right: $spacers.four.x;
+      margin-bottom: 0;
+    }
+    @media $display-breakpoints.md-and-up {
+      margin-right: $spacers.six.x;
+    }
+  }
+}

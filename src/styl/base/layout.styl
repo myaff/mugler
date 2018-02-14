@@ -1,0 +1,59 @@
+/* ==========================================================================
+  BASIC - LAYOUT
+   ========================================================================== */
+html, body {
+  background: $bg;
+}
+
+.l-container {
+  relative();
+  margin-right: auto
+  margin-left: auto
+  width: 100%;
+  //min-width: ($container-widths.min + $grid-gutter);
+  max-width: ($container-widths.max + $grid-gutter);
+  padding: 0 ($grid-gutter / 2);
+}
+
+.layout {
+  min-size($container-widths.min, 100vh);
+  
+  flexy(flex-start, center, nowrap, column);
+  > div {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .page {
+    flex-grow: 1;
+    overflow-x: hidden;
+    //padding-top: $header-height;
+  }
+}
+
+.l-spacer {
+  flex-grow: 1
+}
+
+.l-float {
+  &--left {
+    float: left;
+    
+    ^[0]--outside& {
+      margin-left: -52%;
+    }
+  }
+  &--right {
+    float: right;
+  
+    ^[0]--outside& {
+      margin-right: -52%;
+    }
+  }
+  &--outside {
+    width: 75%;
+  }
+}
+
+.st {
+  position: static;
+}

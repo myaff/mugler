@@ -1,0 +1,17 @@
+.header {
+  absolute(0px, 0px);
+  size(100%, $header-height);
+  z-index: 99;
+  &__content {
+    flexy(space-between, flex-start);
+    padding: $spacers.six.y $spacers.six.x 0;
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+  &__spec {
+    flexy(center, center);
+    .spec-text {
+      letter-spacing: 0.17em;
+    }
+  }
+}

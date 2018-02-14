@@ -1,0 +1,19 @@
+//- social
+mixin social(isInline, hasTitle, isSaint, sharingTitle)
+  .social(class=isInline ? "social--inline" : '')
+    if hasTitle
+      .social__title Поделитьcя
+    if isInline && hasTitle
+      .social__delimiter
+    each item in socials
+      a.social__link(href="#", target="_blank", data-type="#{item.type}", data-image=isSaint ? 'build/img/sharing_900x471_saint.jpg' : 'build/img/sharing_900x471_good-bad.jpg', data-title=sharingTitle, data-text="Пройдите наш короткий тест и узнайте, заслужили ли вы преподношения на этот Новый год!")
+        svg.icon.social__icon: use(xlink:href="##{item.icon}")/
+        span.social__text= item.text
+
+mixin shops()
+  .shops.tp-text--center
+    .shops__text.tp-body--base.tp-text--upper Послушай первым аромат, <br/>усиливающий твою ауру, <br/>в магазинах:
+    .shops__list.mt-5
+      a.shops__item.mx-4(href="#"): img(src="/build/img/logo_idb.png", alt="Иль де ботэ")
+      a.shops__item.mx-4(href="#"): img(src="/build/img/logo_rg.png", alt="Рив Гош")
+      a.shops__item.mx-4(href="#"): img(src="/build/img/logo_zya.png", alt="Золотое яблоко")

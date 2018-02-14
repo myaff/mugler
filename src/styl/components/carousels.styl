@@ -1,0 +1,55 @@
+.carousel {
+  &--default {
+    .owl-nav {
+      absolute();
+      size(81px, 20px);
+      bottom: $spacers.six.y;
+      right: $spacers.fifteen.x;
+      flexy(space-between, center);
+      @media $display-breakpoints.sm-and-up {
+        display: none;
+      }
+    }
+    .owl-prev,
+    .owl-next {
+      size(33px, 20px);
+      cursor: pointer;
+      .icon {
+        display: block;
+        size(100%);
+        line-height: 1;
+      }
+    }
+    .owl-dots {
+      absolute();
+      bottom: $spacers.six.y;
+      right: $spacers.thirty.x;
+      flexy(flex-end, center);
+      @media $display-breakpoints.ms-and-down {
+        display: none;
+      }
+    }
+    .owl-dot {
+      circle(0.75rem);
+      margin-left: $spacers.four.x;
+      background: $wb.white;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+      
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  @media $display-breakpoints.ms-and-down {
+    &--mobile {
+      .owl-item {
+        padding: 0 $spacers.four.x;
+      }
+      .owl-nav {
+        absolute(12px, 0px);
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+extends template
+
+prepend page
+  - var layout = 'home';
+  - var currentPage = 'home';
+
+block content
+  .page.page--home
+    .section.section--start.a-parallax-box
+      .section__bg.a-parallax-back(data-parallax-from="0", data-parallax-to="10")
+      .section__content
+        .l-container
+          .section__heading
+            .tp-heading--huge.text-big Доверьтесь
+            .tp-body--large.text-small.mt-1 Инстинктам
+          .l-flex-noGutter
+            .l-col-7
+              .section__text.mt-10
+                .tp-body--main.tp-text--center: p Некоторые события нашей жизни с трудом поддаются объяснению. Интуиция, внутренний голос — есть масса определений тому, почему иногда мы закрываем глаза на здравый смысл, руководствуясь одними лишь чувствами. А ароматы в такие моменты, словно невидимый талисман, помогают усилить веру в себя и также запечатлеть навсегда   события из прошлого. В этом мы убедились, познакомившись с четырьмя девушками: барменом, балериной, гимнасткой и блогером. А в специальной съемке Aura Mugler героини раскрыли все грани своей индивидуальности.
+          .section__img.a-parallax-box
+            .bg.a-parallax-middle(data-parallax-from="-3", data-parallax-to="5")
+            img.img(src="/build/img/animation_banka.gif", alt="Mugler")
+            a.btn(href="#") Подробнее
+    .section.section--interview
+      .l-container
+        .l-flex.si-1.mt-3
+          .l-col-7.si-10
+            .img-wrapper.mt-20.ml-30: img(src="/build/img/img_01.jpg", alt="Ирина Голубева")
+          .l-col-6.si-11(data-push-right="off-minus-1")
+            .block-content.pl-20.pr-2
+              .tp-heading--large Ирина Голубева
+              .tp-heading--small.mt-3 Бармен
+              blockquote «Моя внутренняя сила в том, что я не сомневаюсь в себе»
+              .tp-body--main: p Я верю в судьбу и считаю, что нужно заниматься тем, что ты любишь. Мне в этом повезло, ведь моя профессия подразумевает постоянное развитие: например, недавно я принимала участие в конкурсе, где мне нужно было сделать напиток с запахом любимого аромата. И я не хочу останавливаться на достигнутом: планирую пойти стажироваться на кухню к моему другу, шеф-повару, поработать с настоящим парфюмером.
+              .text-block.tp-body--medium.tp-text--upper.my-6.ml-6 Кто будет следующей героиней? <br/>Узнайте через неделю!
+        .l-flex.si-2
+          .l-col-6.si-20
+            .block-content
+              .text-block.tp-body--main: p Люди и путешествия — то, что меня вдохновляет больше всего. Люблю иногда просто сидеть и наблюдать за окружающими — мы все настолько разные, и это прекрасно. Мне нравятся нестандартные и инакомыслящие люди. Уверена, что человек — это и есть самое сильное вдохновение, ведь все вокруг создается руками людей.
+          .l-col-7.si-21(data-push-right="off-minus-1")
+            .img-wrapper: img(src="/build/img/img_02.jpg", alt="Ирина Голубева")
+        .l-flex.si-3
+          .l-col-6.si-30(data-push-left="off-minus-1")
+            .img-wrapper: img(src="/build/img/img_03.jpg", alt="Ирина Голубева")
+          .l-col-6.si-31
+            .block-content.mt-6.ml-10
+              .text-block.tp-body--main: p Я совершенно независима от общественного мнения, всегда прямо говорю то, что думаю. Именно за это многие меня и не любят, и из-за этого я чаще всего страдаю. Не понимаю, зачем люди так много внимания и энергии уделяют чужой критике. Шаблоны — это тоже не про меня. Я стараюсь идти своей дорогой, прислушиваясь к своему внутреннему голосу: например, как-то раз я решила сделать коктейль с запахом моего любимого аромата и благодаря этому выиграла конкурс. Необычный и яркий опыт!
+        .l-flex-center.si-4
+          .l-col-6.si-40
+            .block-content.mt-6.ml-5
+              .text-block.tp-body--main: p Я убеждена, что людей друг к другу притягивают запахи. В фильме «Парфюмер» мне очень понравилась идея, что у каждого человека есть свой уникальный запах. У меня дома очень много парфюма, я изучаю их композиции, примеряю к себе. Некоторыми я пользуюсь только днем, другими — в определенное время года: например, есть парфюм, который я люблю наносить в дождливый вечер. В числе моих фаворитов — дымные ноты уда и ладана, такие же, как в новом аромате Aura.
+        .solcial__wrapper.mt-8
+          +social(true, true)
+    .section.section--test
+      .l-container
+        .test-start-welcome.js-test-welcome
+          .test-start__content.tp-text--center
+            .tp-heading--huge Тест
+            .tp-heading--base.mt-4 какова ваша <br/>внутренняя сила?
+            button.btn.mt-5.js-test-start Начать
+        .test.js-test
+          .test__carousel.owl-carousel.carousel--test
+            each item, index in test.questions
+              .test__question.tp-text--center
+                .test__number= index+1 + '/' + test.questions.length
+                .test__title.tp-body--main.mt-8= item.text
+                .test__variants.mt-8
+                  .l-flex-noBottom
+                    each variant, key in item.vars
+                      .l-col-3
+                        .test-variant.js-test-ctrl(data-key=variant.value)
+                          .test-variant__ctrl
+                          .test-variant__text.tp-body--medium.mt-4= variant.text
+        .test-results.js-test-results.tp-text--center
+          .l-flex-noBottom
+            .l-col-6(data-push-left="off-3")
+              .test-results__list
+                each item in test.results
+                  .test-result(id="result-" + item.key)
+                    .test-result__title.tp-heading--bigger= item.title
+                    .test-result__text.tp-body--medium.mt-6.mx-3= item.text
+              .test-results__img: img(src="/build/img/packshot.png", alt="Aura Mugler")
+              .test-results__shops
+                +shops()
+              .test-results__socials.mt-8
+                +social(true, true)
+            .l-col-3
+              .test-results__restart: button.btn.js-test-restart Пройти еще раз
+    .section.section--product.pb-8
+      .l-container
+        .section__heading.tp-text--center
+          .section__heading-img: img(src="/build/img/logo-aura.png", alt="Aura Mugler")
+          .section__heading-text.tp-body--main.tp-text--upper Новый аромат от MUGLER
+        .section__content.mt-6
+          .l-flex-noGutter
+            .l-col-6
+              .tp-body--main.mr-7: p Яркий и беспрецедентно женственный, новый аромат Aura Mugler — это история о первобытной чувственности с ее животной силой и магнетизмом. Во время работы над своим шедевром Тьерри Мюглер вдохновлялся женским началом и той невидимой аурой, которую каждая женщина распространяет вокруг себя. Его героиня — сильная и независимая женщина, которая не боится прислушиваться к себе и своим инстинктам, не обращая внимания на общественное мнение. Таким же свободолюбивым, пронизанным внутренней силой и уверенностью в себе получился и новый аромат. 
+            .l-col-6
+              .tp-body--main: p В его композиции объединились три грани: тигровая лиана символизирует дикую и необузданную сторону аромата, лист ревеня и зеленые ноты — его гармоничное сосуществование с окружающим миром, а бурбонская ваниль — природную чувственность, отсылающую к первобытным, животным инстинктам. Вместе они создают переливающееся всеми гранями сердце аромата, образ которого нашел свое отражение в исполнении флакона. Мерцающие грани изумруда заключены в металлическую окантовку в форме символичной для бренда буквы «М». За этой видимой простотой скрывается невероятная внутренняя сила, присущая аромату Aura Mugler и рассказывающая историю о современной женственности и природном инстинкте в реалиях каменных джунглей. 
+        .section__tags.mt-15.tp-body--main
+          span.tag.mr-20 #AuraMugler
+          span.tag.mr-20 #Listentoyourinstinct
+          span.tag.mr-20 #MyMugler
+        .section__video.mt-30
+          iframe(src="https://www.youtube.com/embed/5J4ZDSeC3uA?rel=0", frameborder="0", allow="autoplay; encrypted-media", allowfullscreen)
+        .section__info.mt-7.tp-text--center
+          a.btn(href="#", target="_blank") подробнее об аромате
+          .shops__wrapper.mt-5
+            +shops()
+          .social__wrapper.mt-7
+            +social(true, true)

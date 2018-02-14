@@ -1,0 +1,62 @@
+/* ==========================================================================
+  BASIC - SPACINGS
+   ========================================================================== */
+$i = 0
+for level, spacer in $spacers
+  if level == ten
+    $k = 10
+  else if level == twenty
+    $k = 20
+  else if level == fifteen
+    $k = 15
+  else if level == thirty
+    $k = 30
+  else
+    $k = $i
+  .mt-{$k}
+    margin-top: spacer.y !important
+  .mr-{$k}
+    margin-right: spacer.x !important
+  .mb-{$k}
+    margin-bottom: spacer.y !important
+  .ml-{$k}
+    margin-left: spacer.x !important
+  .mx-{$k}
+    margin-left: spacer.x !important
+    margin-right: spacer.x !important
+  .my-{$k}
+    margin-top: spacer.y !important
+    margin-bottom: spacer.y !important
+  .ma-{$k}
+    margin: spacer.y spacer.x !important
+    
+  .pt-{$k}
+    padding-top: spacer.y !important
+  .pr-{$k}
+    padding-right: spacer.x !important
+  .pb-{$k}
+    padding-bottom: spacer.y !important
+  .pl-{$k}
+    padding-left: spacer.x !important
+  .px-{$k}
+    padding-left: spacer.x !important
+    padding-right: spacer.x !important
+  .py-{$k}
+    padding-top: spacer.y !important
+    padding-bottom: spacer.y !important
+  .pa-{$k}
+    padding: spacer.y spacer.x !important
+    
+  $i = $i + 1
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.ma-auto {
+  margin: auto;
+}
