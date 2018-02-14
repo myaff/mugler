@@ -27,6 +27,29 @@ a {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-shadow: -10px 0 40px rgba($green, 0.67);
+    transition: text-shadow 0.5s;
+    
+    .a-parallax-box & {
+      .shade-phantom {
+        absolute(0px, 0px);
+        z-index: 1;
+        color: transparent;
+      }
+      .no-shade {
+        text-shadow: none;
+        z-index: 2;
+      }
+    }
+    .a-scroll-box > & .shade-phantom {
+      transition: opacity 0.3s 0.5s;
+      opacity: 0;
+      .animate & {
+        opacity: 1;
+      }
+    }
+    .a-scroll-box.animate > & .shade-phantom {
+      opacity: 1;
+    }
   }
   &--large {
     font-size: 60px;

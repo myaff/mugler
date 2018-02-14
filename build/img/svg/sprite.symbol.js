@@ -43,4 +43,4 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 --><h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3><ul><li title="fb"><div class="icon-box"><!-- fb --><svg class="svg-fb-dims"><use xlink:href="sprite.svg#fb"></use></svg></div><h2>fb</h2></li><li title="tw"><div class="icon-box"><!-- tw --><svg class="svg-tw-dims"><use xlink:href="sprite.svg#tw"></use></svg></div><h2>tw</h2></li><li title="vk"><div class="icon-box"><!-- vk --><svg class="svg-vk-dims"><use xlink:href="sprite.svg#vk"></use></svg></div><h2>vk</h2></li></ul><!--
 ====================================================================================================
---></section><footer><p>Generated at Wed, 14 Feb 2018 01:31:19 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p></footer></body></html>';
+--></section><footer><p>Generated at Wed, 14 Feb 2018 12:54:50 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p></footer></body></html>';

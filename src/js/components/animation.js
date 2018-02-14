@@ -18,7 +18,7 @@ function addClassTogglerScene (el, controller) {
 function addClassTogglerController (animationBlocks) {
   let controller = new ScrollMagic.Controller();
   animationBlocks.each(function(){
-    let closestContainer = $(this).closest('[class*="grid"]:not([class*="col"])')[0];
+    let closestContainer = $(this).closest('[class*="l-flex"]:not([class*="l-col"])')[0] || $(this).closest('.l-container')[0];
     if (closestContainer.offsetTop < window.outerHeight) {
       $(this).children('[class*="a-"]').css({'transition': 'none'});
       let self = this;
